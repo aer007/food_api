@@ -1,0 +1,26 @@
+<h2> This will be the search all recipe page</h2>
+
+<div>
+  <%= form_tag(recipes_all_path) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+      <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
+
+
+<div class="row">
+<% @recipe_results.each do |recipe| %>
+  <div class="col-xs-5 col-xs-offset-1">
+    <div class= "well">
+      <div class="title text-center">
+        <strong><%=recipe["title"] %></strong>
+      </div>
+      <div class="article-body">
+        <div class="text-center">
+          <%= image_tag("https://spoonacular.com/recipeImages/" + recipe["image"], height:"200px", width: "275px;") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

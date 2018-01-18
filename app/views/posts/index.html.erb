@@ -1,0 +1,13 @@
+<h1 align = "center"> This is the index </h1>
+<div id = "posts">
+
+    <% @posts.each do |post| %>
+     <div class = "post">
+       <h2 class = "title"><%= link_to post.title, post_path(post), id: "title" %></h2>
+       <p class="time">
+         Published at:<%= time_ago_in_words(post.created_at) %> ago</p>
+         by <%= post.user.email %>
+        </div>
+      <% end %><br/>
+</div>
+<%= link_to 'Create New Post', new_post_path, align: "center" %>
