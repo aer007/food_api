@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
+
   def index
     @response = HTTParty.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10", headers:{"X-Mashape-Key" => "lIOsRhZMTKmshyZ09B79rcDrwYNJp1gIzZmjsnPFBdpnDRnySc","Accept" => "application/json"})
     @recipes =@response["recipes"].each do |recipe|
       Recipe.new(recipe)
-    end 
+    end
     #@recipes = @response["recipes"]
   end
 
@@ -17,10 +18,6 @@ class RecipesController < ApplicationController
     end
 
   def show
-    @response = HTTParty.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10", headers:{"X-Mashape-Key" => "lIOsRhZMTKmshyZ09B79rcDrwYNJp1gIzZmjsnPFBdpnDRnySc","Accept" => "application/json"})
-    @recipes = @response["recipes"].each do |recipe|
-      Recipe.new(recipe)
-    end
     @recipe = Recipe.find(params[:id])
   end
 
