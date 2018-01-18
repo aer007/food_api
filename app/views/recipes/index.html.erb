@@ -7,7 +7,7 @@
   <div class="col-xs-5 col-xs-offset-1"> %>
     <div class="well well-lg" id:"test">
       <div class="text-center">
-        <strong><%= link_to recipe["title"], recipes_show_path(recipe.id) %></strong>
+        <strong><%= link_to recipe["title"], recipes_show_path(param :id) %></strong>
       </div>
       <div class="article-body">
         <div class="text-center">
