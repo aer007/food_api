@@ -11,8 +11,42 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ $navbar-default-bg: #4c5666;
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ #rotating-item-wrapper {
+ 	position: relative;
+ 	width: 750px;
+ 	height: 347px;
+ }
+ .rotating-item {
+ 	display: none;
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ }
+
+ #logo {
+   float: left;
+   font-size: 1.7em;
+   color: white;
+   text-transform: uppercase;
+   letter-spacing: -1px;
+   font-weight: bold;
+ }
+
+ #logo:hover {
+   color: white;
+   text-decoration: none;
+ }
+
+ #nav-text {
+   color: white;
+ }
+ #nav-text1 {
+   color: white;
+ }
 #test {
   width: 50%;
   float:left;
