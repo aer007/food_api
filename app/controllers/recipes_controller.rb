@@ -2,8 +2,9 @@ class RecipesController < ApplicationController
 
   def index
     @response = HTTParty.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10", headers:{"X-Mashape-Key" => "lIOsRhZMTKmshyZ09B79rcDrwYNJp1gIzZmjsnPFBdpnDRnySc","Accept" => "application/json"})
-    @recipes =@response["recipes"].each do |recipe|
-      Recipe.new(recipe)
+    @recipes =@response["recipes"].map do |recipe|
+      recipe_attrs = recipe.keep_if {|k, v| Recipe.column_names.include? k}
+      Recipe.find_or_create_by(recipe_attrs)
     end
     #@recipes = @response["recipes"]
   end
