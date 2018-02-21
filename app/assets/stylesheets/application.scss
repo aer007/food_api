@@ -11,8 +11,47 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap-sprockets";
+ $navbar-default-bg: #4c5666;
  @import "bootstrap";
+
+ .d-block  {
+   max-width: 950px;
+   max-height: 5500px;
+ }
+
+ul .test {
+  list-style-type: none;
+  li {
+    float: right;
+    margin: 10px;
+  }
+}
+
+#carousel_image {
+  width: 80%;
+  margin: auto;
+}
+
+ #logo {
+   float: left;
+   font-size: 1.7em;
+   color: white;
+   text-transform: uppercase;
+   letter-spacing: -1px;
+   font-weight: bold;
+ }
+
+ #logo:hover {
+   color: white;
+   text-decoration: none;
+ }
+
+ #nav-text {
+   color: white;
+ }
+ #nav-text1 {
+   color: white;
+ }
 #test {
   width: 50%;
   float:left;
